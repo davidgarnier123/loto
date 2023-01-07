@@ -1,0 +1,23 @@
+#mainContent {
+    min-height: 100vh;
+    height: auto;
+    background-color: #3D5A80;
+    .hidden {
+        display: none;
+    }
+    &.loading {
+        background-color: #293241;
+    }
+    .wrapper {
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        height: calc(100vh - 20px);
+        .inner {
+            color: white;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

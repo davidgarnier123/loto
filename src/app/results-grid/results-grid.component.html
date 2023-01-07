@@ -1,0 +1,17 @@
+<div id="content">
+    <h1>Les derniers résultats</h1>
+
+    <div id="grids">
+        <div class="grid" *ngFor="let grid of grids | slice:0:25; let i=index">
+            <p class="date">{{grid.date}}</p>
+            <div class="result">
+                <span>{{grid.numbers[0]}}</span>
+                <span>{{grid.numbers[1]}}</span>
+                <span>{{grid.numbers[2]}}</span>
+                <span>{{grid.numbers[3]}}</span>
+                <span>{{grid.numbers[4]}}</span>
+                <span class="chance">{{grid.chance}}</span>
+            </div>
+        </div>
+    </div>
+</div>

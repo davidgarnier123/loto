@@ -1,0 +1,29 @@
+<div id="content">
+    <h1>Génération d'une grille aléatoire</h1>
+
+
+    <div class="grid">
+        <div class="result">
+            <span>{{grid[0] === 0 ? '' : grid[0]}}</span>
+            <span>{{grid[1] === 0 ? '' : grid[1]}}</span>
+            <span>{{grid[2] === 0 ? '' : grid[2]}}</span>
+            <span>{{grid[3] === 0 ? '' : grid[3]}}</span>
+            <span>{{grid[4] === 0 ? '' : grid[4]}}</span>
+
+
+            <span class="chance">{{chance === 0 ? '' : chance}}</span>
+
+        </div>
+    </div>
+
+    <button id="generate" (click)="generateGrid()">Générer</button>
+
+
+    <div id="alreadyWon" *ngIf="alreadyWon.length > 0">
+        Cette grille a déja été gagnante le :
+
+        <p *ngFor="let grid of alreadyWon">
+            {{grid.date}}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+#content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    h1 {
+        margin-top: 2em;
+        color: #E0FBFC;
+    }
+
+    #generate {
+        border: 1px solid #EE6C4D;
+        margin: 0 auto;
+        margin-top: 2em;
+        background-color: transparent;
+        padding: 2em;
+        color: #EE6C4D;
+        transition-duration: 0.2s;
+        cursor: pointer;
+    }
+
+    #generate:hover {
+        border: 1px solid #E0FBFC;
+    }
+
+    .grid {
+        margin-bottom: 1em;
+        text-align: center;
+        margin-top: 2em;
+        .date {
+            color: #EE6C4D;
+        }
+        .result {
+            display: flex;
+            justify-content: center;
+            margin-top: 1em;
+            span {
+                display: flex;
+                justify-content: center;
+                margin-right: 1em;
+                border: 1px solid #293241;
+                width: 3em;
+                height: 3em;
+                align-items: center;
+                border-radius: 50%;
+            }
+            .chance {
+                color: #E0FBFC;
+            }
+        }
+    }
+
+    #alreadyWon {
+        border: 1px solid #E0FBFC;
+        margin: 0 auto;
+        padding: 2em;
+        margin-top: 2em;
+        width: 50%;
+        p {
+            color: orange;
+            margin-top: 2em;
+        }
+    }
+}
