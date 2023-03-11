@@ -19,13 +19,12 @@ export class ResultsService {
 
     public fetchLotoData = () => {
         if (this.onlyNumbers.length === 0 && this.occurences.length === 0) {
-            this.http.get('https://daga123-loto-api.onrender.com/getLotoData').toPromise().then((result: any) => {
-
-                result['data'].forEach((element: any) => {
+            this.http.get('https://loto-api-v2.onrender.com/results').toPromise().then((result: any) => {
+                result.forEach((element: any) => {
                     this.onlyNumbers.push(...element.numbers);
                 });
 
-                result['data'].forEach((element: any) => {
+                result.forEach((element: any) => {
                     this.onlyChances.push(element.chance);
                 });
                 this.occurences = this.onlyNumbers.reduce(function (acc, curr) {

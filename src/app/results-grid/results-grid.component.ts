@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ResultsService } from '../../services/results.service';
-
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-results-grid',
@@ -14,8 +14,13 @@ export class ResultsGridComponent implements OnInit {
 
   ngOnInit(): void {
     this._resultsService.getData().subscribe( (data: any) => {
-      this.grids = data.rawResult.data;
+      this.grids = data.rawResult;
     })
+  }
+
+  public transformDate(date: any): string {
+    date = moment.unix(date); // Convertir le timestamp en objet Moment
+    return date.locale('fr').format('DD MMMM YYYY'); // Formater la date en français
   }
 
 }

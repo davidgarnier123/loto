@@ -18,7 +18,7 @@ export class RandomGridComponent implements OnInit {
 
   ngOnInit(): void {
     this._resultsService.getData().subscribe( (data) => {
-      this.grids = data.rawResult.data;
+      this.grids = data.rawResult;
       this.grids.forEach( (element: any) => {
         element.numbers = element.numbers.map( (i:string) =>Number(i))
         element.chance = Number(element.chance);

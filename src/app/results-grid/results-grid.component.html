@@ -3,7 +3,7 @@
 
     <div id="grids">
         <div class="grid" *ngFor="let grid of grids | slice:0:25; let i=index">
-            <p class="date">{{grid.date}}</p>
+            <p class="date">{{transformDate(grid.date)}}</p>
             <div class="result">
                 <span>{{grid.numbers[0]}}</span>
                 <span>{{grid.numbers[1]}}</span>
