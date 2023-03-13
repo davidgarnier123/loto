@@ -14,7 +14,7 @@ export class ResultsGridComponent implements OnInit {
 
   ngOnInit(): void {
     this._resultsService.getData().subscribe( (data: any) => {
-      this.grids = data.rawResult;
+      this.grids = data.rawResult.sort((a: {date: number}, b: {date: number}) => b.date - a.date);
     })
   }
 
