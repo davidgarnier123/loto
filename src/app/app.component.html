@@ -1,4 +1,5 @@
 <div id="mainContent" [ngClass]="{'loading' : !dataIsReady}">
+  
   <mat-tab-group  #tabs mat-stretch-tabs [ngClass]="{'hidden' : !dataIsReady}" [selectedIndex]="0">
     <mat-tab label="Grille aléatoire"> <app-random-grid></app-random-grid> </mat-tab>
     <mat-tab label="Grille parfaite"> <app-perfect-grid></app-perfect-grid> </mat-tab>

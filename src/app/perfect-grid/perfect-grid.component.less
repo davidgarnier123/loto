@@ -3,34 +3,74 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
+
     h1 {
         margin-top: 2em;
         color: #E0FBFC;
+    }
+    .tip {
+        color: #EE6C4D;
+        margin-top: 1em;
     }
 
     .grid {
         margin-bottom: 1em;
         text-align: center;
         margin-top: 2em;
+
         .date {
             color: #EE6C4D;
         }
+
         .result {
             display: flex;
             justify-content: center;
             margin-top: 1em;
+
             span {
                 display: flex;
                 justify-content: center;
                 margin-right: 1em;
-                border: 1px solid #293241;
+                border: 1px solid gold;
                 width: 3em;
                 height: 3em;
                 align-items: center;
                 border-radius: 50%;
+                color: white;
             }
+
+            span:last-child {
+                border: 1px solid white;
+            }
+
             .chance {
-                color: #E0FBFC;
+                color: gold;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #content {
+        h1 {
+            font-size: 1.4em;
+        }
+
+        .grid {
+            margin-top: 1em;
+        }
+
+        #generate {
+            margin-top: 1em;
+            font-size: 1em;
+            padding: 1em;
+        }
+
+        .result {
+            justify-content: space-around !important;
+
+            span {
+                margin-right: 0 !important;
             }
         }
     }
