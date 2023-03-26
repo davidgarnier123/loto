@@ -8,6 +8,7 @@
         margin-top: 2em;
         color: #E0FBFC;
     }
+
     .tip {
         color: #EE6C4D;
         margin-top: 1em;
@@ -48,6 +49,37 @@
             }
         }
     }
+
+    #numbersOcc,
+    #chanceOcc {
+        color: white;
+        display: flex;
+        flex-direction: column;
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+            margin-top: 1em;
+        }
+
+        >.list {
+            width: 30%;
+            margin: 0 auto;
+
+            ul>li {
+                display: flex;
+                justify-content: space-evenly;
+                margin-bottom: 1em;
+                padding-bottom: 1em;
+                border-bottom: 1px dashed white;
+
+                &.headList {
+                    color: #EE6C4D;
+                }
+
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -71,6 +103,13 @@
 
             span {
                 margin-right: 0 !important;
+            }
+        }
+
+        #numbersOcc,
+        #chanceOcc {
+            >.list {
+                width: 90%;
             }
         }
     }

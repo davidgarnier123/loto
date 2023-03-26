@@ -13,4 +13,35 @@
             <span class="chance">{{orderedChances.length === 0 ? '' : orderedChances[0][0]}}</span>
         </div>
     </div>
+    <div id="numbersOcc">
+        <p>Occurence de sortie des nombres</p>
+        <div *ngIf="allData.occurences" class="list">
+            <ul>
+              <li class="headList">
+                <span>Nombre</span>
+                <span>Occurence</span>
+              </li>
+              <li *ngFor="let occurence of objectKeys(allData.occurences)">
+                <span class="num">{{ occurence[0] }}</span>
+                <span class="occ">{{ occurence[1] }}</span>
+              </li>
+            </ul>
+          </div>
+    </div>
+    <div id="chanceOcc">
+        <p>Occurence de sortie des numéro chance</p>
+          <div *ngIf="allData.occurences" class="list">
+
+            <ul>
+              <li class="headList">
+                <span>Nombre</span>
+                <span>Occurence</span>
+              </li>
+              <li *ngFor="let occurence of objectKeys(allData.occurencesChances)">
+                <span class="num">{{ occurence[0] }}</span>
+                <span class="occ">{{ occurence[1] }}</span>
+              </li>
+            </ul>
+          </div>
+    </div>
 </div>

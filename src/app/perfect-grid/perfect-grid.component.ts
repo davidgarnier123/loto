@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild  } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ResultsService } from '../../services/results.service';
 
 
@@ -13,28 +13,34 @@ export class PerfectGridComponent implements OnInit {
   public orderedNumbers: any = [];
   public orderedChances: any = [];
 
+  public allData: any = [];
+
   constructor(private _resultsService: ResultsService) { }
 
   ngOnInit(): void {
-    this._resultsService.getData().subscribe( (data) => {
+    this._resultsService.getData().subscribe((data) => {
       this.orderedNumbers = this.sortProperties(data.occurences);
       this.orderedChances = this.sortProperties(data.occurencesChances);
+      this.allData = data;
     })
   }
 
 
-  public sortProperties = (obj: any) =>  {
+  public sortProperties = (obj: any) => {
     // convert object into array
-    var sortable=[];
-    for(let key in obj)
-      if(obj.hasOwnProperty(key))
+    var sortable = [];
+    for (let key in obj)
+      if (obj.hasOwnProperty(key))
         sortable.push([key, obj[key]]); // each item is an array in format [key, value]
-    
+
     // sort items by value
-    sortable.sort((a, b) =>
-    {
-      return a[1]-b[1]; // compare numbers
+    sortable.sort((a, b) => {
+      return a[1] - b[1]; // compare numbers
     });
     return sortable; // array in format [ [ key1, val1 ], [ key2, val2 ], ... ]
+  }
+
+  public objectKeys(obj: any) {
+    return Object.entries(obj);
   }
 }
